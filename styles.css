@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(5, 85, 5);
+    color: goldenrod;
+    text-align: center;
+}
+
+#title {
+    font-size:  70px;
+}
+
+.btn {
+    background-color: goldenrod;
+    color: rgb(5, 85, 5);
+    border: none;
+    font-size: 70px;
+    box-shadow: 0 3px black;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: rgb(150, 105, 1);
+    margin-top: 2px;
+    box-shadow: 0 -1px black;
+}
