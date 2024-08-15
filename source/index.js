@@ -4,27 +4,36 @@ let secondCard = 9
 let mainText = document.getElementById("main-message")
 let btnText = document.getElementById("mainbtn")
 let sumEl = document.getElementById("sum-el")
+let card = document.getElementsByClassName("card")
+
+let cardVal = 0
 let message = ""
 let hasBlackjack = false
 let isAlive = true
 let mode = "start"
 let sum = firstCard + secondCard
-
-
-
-
+let t = 1 //parameter t counting card number
 
 function btnClick() {
-    if (mode == "start" || mode == "restart") {
+    if (mode == "start" || mode == "restart") { 
         // added some reset functionality here
-        firstCard = Math.floor(Math.random(1)*10 + 2)
-        secondCard = Math.floor(Math.random(1)*10 + 2)
+        t = 1
+        cardVal = Math.floor(Math.random(1)*10 + 2)
+        showCard(t, cardVal)
+        t = 2
+        cardVal = Math.floor(Math.random(1)*10 + 2)
+        showCard(t, cardVal)
+
         sum = firstCard + secondCard
         isAlive = true
         hasBlackjack = false
         newGame = true
+
+        //trying to make cards appear
     } else if (mode == "hit") {
+        t += 1
         let nextCard = Math.floor(Math.random()*10 + 2)
+        showCard(t)
         sum = sum + nextCard 
     } else {}
 
@@ -44,8 +53,12 @@ function btnClick() {
         mode = "restart"
     }
     
-
-    
     mainText.textContent = message
-    sumEl.textContent = sum
+    sumEl.textContent = "Sum: " + sum
+}
+
+function showCard(v, p) { // p is position, v is value
+    cardPos = document.getElementById("card" + p)
+    card.src += "./spade-cards/" + v + ".png"
+
 }

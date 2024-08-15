@@ -22,3 +22,13 @@ body {
     margin-top: 2px;
     box-shadow: 0 -1px black;
 }
+
+.cards {
+    justify-content: space-around;
+    border: rgb(0, 48, 0) dashed 5px;
+    height: 200px;
+}
+
+.card {
+    height: 200px;
+}
